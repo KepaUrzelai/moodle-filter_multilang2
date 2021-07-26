@@ -156,7 +156,7 @@ class filter_multilang2 extends moodle_text_filter {
             /* We don't check for empty values of $blocklang as they simply don't
              * match any language and they don't produce any errors or warnings.
              */
-            if (($blocklang === $replacelang) || in_array($blocklang, $parentlangs)) {
+            if ((($blocklang === $replacelang) || in_array($blocklang, $parentlangs)) && !$this->replacementdone )  {
                 $this->replacementdone = true;
                 return $blocktext;
             }
